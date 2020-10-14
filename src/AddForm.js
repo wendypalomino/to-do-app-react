@@ -1,12 +1,28 @@
 import React, { Component} from 'react'
 
 class AddTodo extends Component {
-    render(){
+
+    state = { content: null }
+
+    handleChange = (e) => {
+        this.setState({
+           content: e.target.value
+        })
+    }
+
+    handleSubmit = (e) => {
+        e.preventDefault();
+        this.props.addTodo(this.state);
+        
+    }
+   
+
+    render() {
         return(
             <div>
-                <form >
-                    <label htmlForm="content"> Content:</label>
-                    <input type="text" id="content"></input>
+                <form onSubmit={this.handleSubmit}>
+                    <label htmlFor="content"> Add new to do:</label>
+                    <input type="text" id="content" onChange={this.handleChange}></input>
                     <button className="waves-effect waves-light blue btn">Submit</button>
                 </form>
             </div>
