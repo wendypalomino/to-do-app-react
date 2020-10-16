@@ -9,7 +9,8 @@ class App extends Component {
   state = {
     todos: [
     {id: 1, content: 'buy milk'},
-    {id: 2, content: 'make my website'}
+    {id: 2, content: 'make my website'},
+    {id: 3, content: 'work in projects'}
     ]
   }
 
